@@ -17,5 +17,3 @@ class Solution:
                 ans.append(ele)
         return ans
 
-s = Solution()
-print(s.solve([1,21,3,4,5,7,5,8,5,-2,9,7,0]))
