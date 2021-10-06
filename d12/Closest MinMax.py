@@ -12,7 +12,7 @@ class Solution:
         for i in range(len(A)):
             if A[i] == min_num:
                 min_ind = i
-                ans = min(ans,min_ind-max_ind+1)
+                ans = min(ans,min_ind-max_ind)
             if A[i] == max_num:
                 max_ind = i
                 ans = min(ans,max_ind-min_ind+1)
