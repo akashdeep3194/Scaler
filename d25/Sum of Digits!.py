@@ -5,7 +5,7 @@ class Solution:
         if A//10 == 0:
             return A
         sa = self.solve(A//10)
-        return sa + A%10
-
-s = Solution()
-print(s.solve(123))
+        ans = sa+A%10
+        return ans
+# s = Solution()
+# print(s.solve(1234))
