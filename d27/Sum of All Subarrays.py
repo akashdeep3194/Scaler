@@ -7,4 +7,3 @@ class Solution:
         for i,ele in enumerate(A):
             s += (i+1)*(n-i)*A[i]
         return s
-            
