@@ -21,9 +21,7 @@ class Solution:
                     pf[j][1].append(i)
                     j += i
             i += 1
-
         s = set()
-
         for ele in A:
             for el in pf[ele][1]:
                 s.add(el)
