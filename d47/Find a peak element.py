@@ -3,9 +3,12 @@ class Solution:
     # @return an integer
     def solve(self, A):
 
-        if A[0] > A[1]:
+        if len(A) == 1:
             return A[0]
-        if A[-1] > A[-2]:
+
+        if A[0] >= A[1]:
+            return A[0]
+        if A[-1] >= A[-2]:
             return A[-1]
 
         start = 1
@@ -13,7 +16,7 @@ class Solution:
 
         while start <= end:
             mid = start + (end-start+1)//2
-            if A[mid+1] < A[mid] > A[mid-1]:
+            if A[mid+1] <= A[mid] >= A[mid-1]:
                 return A[mid]
             elif A[mid+1] > A[mid]:
                 start = mid+1
