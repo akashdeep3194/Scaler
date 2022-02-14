@@ -6,15 +6,43 @@ class Solution:
         freq = dict()
         max_freq_ele = []
         max_freq = 0
+        res = []
         for ele in A:
-
-            ele = A[1]
-
-            arr.append(ele)
-            freq[ele] = freq.get(ele, 0)+1
-            if freq[ele] >= max_freq:
-                max_freq_ele.append(ele)
+            if ele[0] == 1:
+                ele = ele[1]
+                arr.append(ele)
+                res.append(-1)
+                freq[ele] = freq.get(ele, 0) + 1
+                if max_freq <= freq[ele]:
+                    max_freq_ele.append(ele)
+                    max_freq = freq[ele]
+                    prev_ele = ele
+                else:
+                    max_freq_ele.append(prev_ele)
             else:
-                max_freq_ele.append()
+                x = max_freq_ele.pop()
+                if freq[arr[-1]] >= freq[x]:
+                    freq[arr[-1]] = freq[arr[-1]]-1
+                    res.append(arr.pop())
 
-            arr.remove
+                else:
+                    arr.remove(x)
+                    freq[x] = freq[x]-1
+                    res.append(x)
+        return res
+
+
+if __name__ == "__main__":
+    s = Solution()
+    A = [
+        [1, 5],
+        [1, 7],
+        [1, 5],
+        [1, 7],
+        [1, 4],
+        [1, 5],
+        [2, 0],
+        [2, 0],
+        [2, 0],
+        [2, 0]]
+    print(s.solve(A))
