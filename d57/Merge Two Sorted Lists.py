@@ -4,8 +4,6 @@
 #		self.val = x
 #		self.next = None
 
-from cgitb import small
-
 
 class Solution:
     # @param A : head node of linked list
