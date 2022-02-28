@@ -12,6 +12,7 @@ class TreeNode:
 class Solution:
     # @param A : root node of tree
     # @return a list of list of integers
+
     def levelOrder(self, A):
         ans = []
         arr = []
