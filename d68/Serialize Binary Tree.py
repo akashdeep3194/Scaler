@@ -13,21 +13,18 @@ class Solution:
     # @param A : root node of tree
     # @return a list of list of integers
 
-    def levelOrder(self, A):
+    def solve(self, A):
         ans = []
-        arr = []
         q = Queue()
         q.put(A)
-        q.put(None)
-        while q.qsize() > 1:
+        # q.put(None)
+        while q.qsize() > 0:
             ele = q.get()
-
-            if ele == None:
-                ans.append(arr)
-                arr = []
-                q.put(None)
+            if ele == -1:
+                ans.append(-1)
                 continue
-
+            else:
+                ans.append(ele.val)
             if ele.left is not None:
                 q.put(ele.left)
             else:
@@ -36,9 +33,6 @@ class Solution:
                 q.put(ele.right)
             else:
                 q.put(-1)
-
-            arr.append(ele.val)
-        ans.append(arr)
         return ans
 
 
@@ -50,4 +44,4 @@ if __name__ == "__main__":
     root.left = n2
     root.right = n3
 
-    print(s.levelOrder(root))
+    print(s.solve(root))
